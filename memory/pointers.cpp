@@ -11,5 +11,4 @@ int main()
     *(&firstNum) = 16;
 
     std::cout << pointer << " " << *pointer << std::endl;
-
 }   
