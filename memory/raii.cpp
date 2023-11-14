@@ -9,7 +9,8 @@ class DynamicArray
 
 public:
     DynamicArray(size_t size)
-        : m_size(size), m_arr(new T[size])
+        : m_size(size)
+        , m_arr(new T[size])
     {
         std::cout << "Constructor" << std::endl;
     }

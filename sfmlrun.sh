@@ -2,7 +2,7 @@
 
 # Check for the correct number of arguments
 if [ "$#" -ne 1 ]; then
-    echo "Usage: run <filename>"
+    echo "Usage: sfml <filename>"
     exit 1
 fi
 
@@ -10,7 +10,7 @@ fi
 file="$1.cpp"
 
 # Compilation using g++
-g++ "$file" -o "${file%.*}.out"
+g++ "$file" "-I/opt/homebrew/Cellar/sfml/2.6.1/include"  -o "${file%.*}.out" -L/opt/homebrew/Cellar/sfml/2.6.1/lib -lsfml-graphics -lsfml-window -lsfml-system
 
 # Check if compilation was successful
 if [ -x "${file%.*}.out" ]; then
@@ -19,5 +19,3 @@ if [ -x "${file%.*}.out" ]; then
 else
     echo "Compilation failed"
 fi
-
-# usr/local/bin
